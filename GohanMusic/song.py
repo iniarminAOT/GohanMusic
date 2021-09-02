@@ -50,7 +50,7 @@ def song(client, message):
         )
         print(str(e))
         return
-    m.edit(f"**🔄 Sabar Ya** {rpk} **Lagu Sedang Didownload**")
+    m.edit(f"**🔄 Sabar tod** {rpk} **Lagu Sedang Didownload**")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
@@ -125,7 +125,7 @@ async def progress(current, total, message, start, type_of_ps, file_name=None):
         estimated_total_time = elapsed_time + time_to_completion
         progress_str = "{0}{1} {2}%\n".format(
             "".join("🔴" for i in range(math.floor(percentage / 10))),
-            "".join("🔘" for i in range(10 - math.floor(percentage / 10))),
+            "".join("🔵" for i in range(10 - math.floor(percentage / 10))),
             round(percentage, 2),
         )
 
